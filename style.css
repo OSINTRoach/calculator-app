@@ -38,28 +38,28 @@ button{
     color: gray;
     transition background-color 0.5s;
 }
-.operator:hover, .decimal:hover, .number:hover{
+button:hover{
     background-color: black;
 }
 
-.ac{
-    background-color: rgb(186, 32, 32);
-    color: white;
+#ac{
+    background-color: rgb(186, 32, 32) !important; 
+    color: white !important;
 
 }
-.ac:hover{
-    background-color: lightcoral;
+#ac:hover{
+    background-color: lightcoral !important;
 }
 
-.equal{
-    background-color: orange;
-    color: white;
-    height: 100%;
-    grid-area: 2 / 4 / 6 / 5;
+#equal{
+    background-color: orange !important;
+    color: white !important;
+    height: 100% !important;
+    grid-area: 2 / 4 / 6 / 5 !important;
 }
 
-.equal:hover{
-    background-color: rgb(237, 181, 78);
+#equal:hover{
+    background-color: rgb(237, 181, 78) !important;
 }
 
 .grid{

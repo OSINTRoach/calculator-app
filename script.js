@@ -1,9 +1,9 @@
 // REFORMAT AS CLASS, ADD ONKEY
 
 // Getting all elements and mapping event listeners
-const screen = document.querySelector("#result");
+const screen = document.querySelector('#result');
 
-[...document.querySelectorAll(".number")].map(number => {
+[...document.querySelectorAll('[number]')].map(number => {
     number.addEventListener('click', (e)=>{
         if(e.target.innerHTML === '.' && !haveDot) haveDot = true;
         else if(e.target.innerHTML === '.' && haveDot) return;
@@ -12,11 +12,12 @@ const screen = document.querySelector("#result");
     });
 });
 
-[...document.querySelectorAll(".operator")].map(operation => {
+[...document.querySelectorAll('[operator]')].map(operation => {
     operation.addEventListener('click', handleOperation, false);
 });
-document.querySelector(".equal").addEventListener('click', handleCalculation);
-document.querySelector('.ac').addEventListener('click', ac);
+
+document.querySelector('[equal]').addEventListener('click', handleCalculation);
+document.querySelector('[ac]').addEventListener('click', ac);
 
 // Creating basic variables for storing data
 let operator = null;
@@ -27,13 +28,15 @@ let haveDot = false;
 
 // Functionality and handling of events
 function handleOperation(){
+    if(currentValue === "") return;
     operator = this.innerHTML;
     prevValue = currentValue;
     currentValue = "";
     screen.value = operator;
 }
 function handleCalculation(){
-    currentValue = calculate(prevValue, operator, currentValue).toFixed(3);
+    if(currentValue === "" || prevValue === "" || operator === null) return;
+    currentValue = calculate(prevValue, operator, currentValue)
     screen.value = currentValue;
     prevValue = currentValue;
 }
